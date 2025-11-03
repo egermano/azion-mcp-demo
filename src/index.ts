@@ -35,7 +35,7 @@ app.post("/mcp", async (c) => {
       server.close();
     });
 
-    return c.newResponse(null, 200);
+    return toFetchResponse(res);
   } catch (error) {
     console.error("Error handling MCP request:", error);
     return c.json(

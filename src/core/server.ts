@@ -11,9 +11,9 @@ export const getServer = () => {
   );
 
   tools.forEach((tool) => {
-    const { name, description, inputSchema, execute } = tool;
-    // @ts-ignore 
-    server.registerTool(name, { description, inputSchema }, execute);
+    const { name, execute, ...config } = tool;
+    // @ts-ignore
+    server.registerTool(name, config, execute);
   });
 
   return server;

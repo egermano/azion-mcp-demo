@@ -7,6 +7,7 @@ export interface McpTool {
   name: string;
   description: string;
   inputSchema: ZodRawShape;
+  outputSchema: ZodRawShape;
   execute: (args: Record<string, any>) => Promise<ToolResponse>;
 }
 

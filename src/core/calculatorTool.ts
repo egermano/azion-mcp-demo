@@ -17,6 +17,7 @@ export function createCalculatorTool(): McpTool {
         .enum(["add", "subtract", "multiply", "divide"])
         .describe("Operation between A and B: add, subtract, multiply, divide"),
     },
+    outputSchema: { result: z.number() },
     execute: async (args: Record<string, any>) => {
       const { a, b, operation } = args;
 
@@ -27,13 +28,16 @@ export function createCalculatorTool(): McpTool {
         divide: (a: number, b: number) => a / b,
       };
 
+      const output = result[operation](a, b);
+
       return {
         content: [
           {
             type: "text",
-            text: result[operation](a, b).toString(),
+            text: output.toString(),
           },
         ],
+        structuredContent: { result: output },
       };
     },
   };
