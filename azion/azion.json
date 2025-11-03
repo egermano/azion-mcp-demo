@@ -1,0 +1,57 @@
+{
+  "name": "mcp-demo",
+  "bucket": "",
+  "preset": "typescript",
+  "env": "production",
+  "prefix": "20251103151040",
+  "not-first-run": true,
+  "function": [
+    {
+      "id": 50763,
+      "name": "mcp-demo",
+      "file": "",
+      "args": "./azion/args.json",
+      "instance-id": 45371,
+      "instance-name": "",
+      "cache-id": 0
+    }
+  ],
+  "application": {
+    "id": 1762191623,
+    "name": "__DEFAULT__"
+  },
+  "domain": {
+    "id": 0,
+    "name": "__DEFAULT__",
+    "domain_name": "",
+    "url": ""
+  },
+  "rt-purge": {
+    "purge_on_publish": true
+  },
+  "origin": null,
+  "rules-engine": {
+    "created": false,
+    "rules": [
+      {
+        "id": 486650,
+        "name": "Execute Function",
+        "phase": "request"
+      }
+    ]
+  },
+  "cache-settings": [],
+  "workloads": {
+    "id": 1762190567,
+    "name": "mcp-demo",
+    "domains": [],
+    "url": "https://kuxfdwhfbtu.map.azionedge.net",
+    "deployment_id": [
+      {
+        "id": 168630,
+        "name": "mcp-demo"
+      }
+    ]
+  },
+  "connectors": []
+}
