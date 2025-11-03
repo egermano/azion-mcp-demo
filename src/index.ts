@@ -10,6 +10,18 @@ const app = new Hono();
 // cors
 app.use(cors());
 
+app.get('/', (c) => {
+  return c.json({
+    jsonrpc: "2.0",
+    result: {
+      project: "azion-mcp-server",
+      description: "Azion MCP Server",
+      version: require('../package.json').version,
+    },
+    id: null,
+  });
+})
+
 app.post("/mcp", async (c) => {
   try {
     const { req, res } = toReqRes(c.req.raw);
