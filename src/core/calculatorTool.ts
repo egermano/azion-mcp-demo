@@ -11,11 +11,9 @@ export function createCalculatorTool(): McpTool {
             - Inform the operation (add, subtract, multiply, divide)
         `,
     inputSchema: {
-      a: z.number().describe("Number A"),
-      b: z.number().describe("Number B"),
-      operation: z
-        .enum(["add", "subtract", "multiply", "divide"])
-        .describe("Operation between A and B: add, subtract, multiply, divide"),
+      a: z.number(),
+      b: z.number(),
+      operation: z.enum(["add", "subtract", "multiply", "divide"]),
     },
     outputSchema: { result: z.number() },
     execute: async (args: Record<string, any>) => {
